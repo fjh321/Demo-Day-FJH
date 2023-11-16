@@ -11,3 +11,16 @@ The main structure of the app involves the profile page where users can add item
 Lessons Learned :
 * Familiarized myself with API implementation and documentation.
 * Developed a more profound understanding of CRUD applciations and database NoSQL databse implementation with MongoDB.
+
+## Installation
+1. Clone repo
+2. run `npm install`
+
+## Usage
+
+1. run `node server.js`
+2. Navigate to `localhost:8080`
+
+## Credit
+
+Modified from Scotch.io's auth tutorial
