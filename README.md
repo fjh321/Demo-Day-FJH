@@ -1,5 +1,6 @@
 # Demo-Day-FJH
-<img width="614" alt="image" src="https://github.com/fjh321/Demo-Day-FJH/assets/64885403/6910f98f-31af-4d7e-81f3-b08ffd04a560">
+<img width="669" alt="image" src="https://github.com/fjh321/Demo-Day-FJH/assets/64885403/106d7e0d-efac-43c2-a5e0-a7f2cb9e8fcb">
+
 
 
 
