@@ -9,6 +9,8 @@ I used HTML, CSS, JavaScript, Node.js, Express.js, MongoDB and EJS to code this 
 
 The main structure of the app involves the profile page where users can add items and those items' quantities. These items and corresponding quantities populate in the DOM as li elements and allow for the updating of the quantity via a PUT request on the server-side. 
 
+I currently added a feature where if you click on an list item's qr code it will decrement the quantity by 1 thus simulating a sale of that item for one unit of that item.
+
 Lessons Learned :
 * Familiarized myself with API implementation and documentation.
 * Developed a more profound understanding of CRUD applciations and database NoSQL databse implementation with MongoDB.
