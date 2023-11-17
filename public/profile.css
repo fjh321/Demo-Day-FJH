@@ -1,0 +1,78 @@
+html {
+    font-size: 62.5%;
+}
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: url(https://img.playbook.com/IZSaaisbuPYRUSQYBZckzA61Px-1dJx2_5pGRp3N4dk/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzRkZmUwYjQ2/LWRhNjAtNDQ2Yy1h/Y2UxLWM0ZTZkMGI3/NTdlMA);
+    background-size: cover;
+    background-position: center;
+}
+
+
+ul,
+h3,
+h2,
+h1 {
+    color: white;
+}
+
+#producth2,
+#producth3 {
+    text-align: right;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 2rem 0;
+}
+
+span {
+    font-size: 2rem;
+    margin-right: 5rem
+}
+
+
+
+.forminput1 {
+    width: 30%;
+}
+
+.forminput3 {
+    width: 40%;
+}
+
+.forminput2 {
+    width: 10%;
+}
+
+
+input {
+    border-radius: 1rem;
+    width: 10%;
+}
+
+
+
+#quantity {
+    display: inline-block;
+
+}
+
+button,
+a {
+    border-radius: 1rem;
+}
