@@ -1,5 +1,6 @@
 # Demo-Day-FJH
-<img width="704" alt="image" src="https://github.com/fjh321/Demo-Day-FJH/assets/64885403/19ee6db3-eaad-40ff-ab0b-62b5b552f741">
+<img width="593" alt="image" src="https://github.com/fjh321/Demo-Day-FJH/assets/64885403/bf60c6d4-7c89-45b7-b6da-c98ccbe4055a">
+
 
 The main premise of this demo day app is to simplify and faciliate inventory tracking for businesses and small business owners. Business owners have the ability to login into their account, add items, dictate the quantity of those items.
 
