@@ -1,19 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 62.5%;
 }
 
 
-
 body {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     min-height: 100vh;
     background: url(https://img.playbook.com/IZSaaisbuPYRUSQYBZckzA61Px-1dJx2_5pGRp3N4dk/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzRkZmUwYjQ2/LWRhNjAtNDQ2Yy1h/Y2UxLWM0ZTZkMGI3/NTdlMA);
     background-size: cover;
     background-position: center;
 }
 
+nav {
+    display: block;
+    width: 100%;
+}
 
 ul,
 h3,
@@ -22,22 +26,34 @@ h1 {
     color: white;
 }
 
+
 #producth2,
 #producth3 {
     text-align: right;
+    margin-left: 10rem;
 }
 
 .row {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.input-div {
+    margin-left: 10rem;
+}
+
+.listOne {
+    width: 95%;
 }
 
 li {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin: 2rem 0;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem 0;
 }
 
 span {
@@ -45,10 +61,22 @@ span {
     margin-right: 5rem
 }
 
+img {
+    margin-top: -5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: 20rem;
+    height: 10rem;
+}
 
+.input-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 .forminput1 {
-    width: 30%;
+    width: 25%;
 }
 
 .forminput3 {
@@ -59,17 +87,24 @@ span {
     width: 10%;
 }
 
+.forminput4 {
+    width: 15%;
+}
 
 input {
     border-radius: 1rem;
-    width: 10%;
 }
 
+li input {
+    border-radius: 1rem;
+    width: 10%;
+    height: 4rem;
+}
 
 
 #quantity {
     display: inline-block;
-
+    margin-right: 2rem;
 }
 
 button,

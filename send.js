@@ -1,3 +1,4 @@
+
 const { Vonage } = require('@vonage/server-sdk')
 
 const vonage = new Vonage({
@@ -8,7 +9,7 @@ const vonage = new Vonage({
 
 const from = "19847109789"
 const to = "12064198205"
-const text = 'A text message sent using the Vonage SMS API'
+const text = 'Testing Vonage API with Demo Day (Fernando J. Hernandez).'
 
 async function sendSMS() {
     await vonage.sms.send({ to, from, text })
@@ -16,4 +17,4 @@ async function sendSMS() {
         .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
 }
 
-sendSMS();
+

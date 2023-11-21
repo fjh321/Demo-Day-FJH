@@ -56,7 +56,7 @@ module.exports = function (app, passport, db) {
 
   app.post('/messages', (req, res) => {
     console.log(req.body)
-    db.collection('messages').insertOne({ product: req.body.product, description: req.body.description, quantity: req.body.quantity }, (err, result) => {//insertOne is inserting the object with the fields that we select from the req.body, which was the info submitted by the user. req.body field names come from ths name attributes of the inputs inside the form element in our index.ejs.
+    db.collection('messages').insertOne({ product: req.body.product, description: req.body.description, quantity: req.body.quantity, threshold: req.body.threshold }, (err, result) => {//insertOne is inserting the object with the fields that we select from the req.body, which was the info submitted by the user. req.body field names come from ths name attributes of the inputs inside the form element in our index.ejs.
       if (err) return console.log(err)
       console.log('saved to database')
       console.log(result)
@@ -70,17 +70,58 @@ module.exports = function (app, passport, db) {
     const fileName = Math.floor(Math.random() * 10000) + '.svg'
     downloadImage(imageUrl, fileName, (err) => {
       if (err) return console.log(err)
-      //now that image is downloaded insert document into messages collection. What I already did with my code on the above in the messages route above.
-    })
+      console.log('saved to database')
+      console.log(result)
+      res.redirect('/profile') //redirects back to main page and uses the app.get request
+      //now that image is downloaded insert document into messages collection. do what I  did with my code on the above in the messages route above.
 
+    })
   }
 
   app.put('/messagesupdatequantity', (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     db.collection('messages')
       .findOneAndUpdate({ _id: ObjectID(req.body.id) }, {
         $set: {
           quantity: req.body.quantity
+        },
+      }, {
+        returnOriginal: false,
+        // sort: { _id: -1 },//sorting bottom to top 
+        // upsert: true
+      },
+        (err, result) => {
+          if (err) return res.send(err)
+          console.log(result)
+          res.send(result)
+        })
+  })
+
+  app.put('/messagesdecrementquantity', (req, res) => {
+    const quantity = req.body.quantity
+    db.collection('messages')
+      .findOneAndUpdate({ _id: ObjectID(req.body.id) }, {
+        $set: {
+          quantity: quantity - 1
+        },
+      }, {
+        returnOriginal: false,
+        // sort: { _id: -1 },//sorting bottom to top 
+        // upsert: true
+      },
+        (err, result) => {
+          if (err) return res.send(err)
+          console.log(result)
+          res.send(result)
+        })
+  })
+
+  app.put('/messagesupdatethreshold', (req, res) => {
+    // console.log(req.body)
+    db.collection('messages')
+      .findOneAndUpdate({ _id: ObjectID(req.body.id) }, {
+        $set: {
+          threshold: req.body.threshold
         },
       }, {
         returnOriginal: false,
@@ -99,7 +140,7 @@ module.exports = function (app, passport, db) {
 
 
   app.delete('/messages', (req, res) => {
-    db.collection('messages').findOneAndDelete({ product: req.body.product, quantity: req.body.quantity }, (err, result) => {
+    db.collection('messages').findOneAndDelete({ product: req.body.product, description: req.body.description, quantity: req.body.quantity, threshold: req.body.threshold }, (err, result) => {
       console.log(req.body)
       if (err) return res.send(500, err)
       res.send('Message deleted!')

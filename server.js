@@ -17,6 +17,9 @@ const session = require('express-session');
 
 const configDB = require('./config/database.js');//grabbing our database same as plugging in server url object
 
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useUnifiedTopology', true);
+
 let db
 
 // configuration ===============================================================
@@ -52,3 +55,4 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 // launch ======================================================================
 app.listen(port);
 console.log('The magic happens on port ' + port);//console.log to show us that our server is running
+

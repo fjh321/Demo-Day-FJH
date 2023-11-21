@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="/profile.css">
 </head>
 <body>
-<div class="container">
-
+<nav id="nav">
     <div class="page-header text-center">
         <h1>StockIt Inventory App</h1>
         <a href="/logout" class="btn btn-default btn-md">Logout</a>
     </div>
+  </nav>
     <div class="row">
 
         <!-- LOCAL INFORMATION -->
-        <!-- <div class="col-sm-6">
-            <div class="well">
+        <div class="col-sm-6">
+            <!-- <div class="well">
                 <h3><span class="fa fa-user"></span> Local</h3>
 
                 <% if (user.local.email) { %>
@@ -28,6 +28,7 @@
                         <strong>id</strong>: <%= user._id %><br>
                         <strong>email</strong>: <%= user.local.email %><br>
                         <strong>password</strong>: <%= user.local.password %>
+                        <strong>phonenumber</strong>: <%= user.local.phonenumber %>
                     </p>
 
                     <a href="/unlink/local" class="btn btn-default">Unlink</a>
@@ -35,15 +36,17 @@
                     <a href="/connect/local" class="btn btn-default">Connect Local</a>
                 <% } %>
 
-            </div>
-        </div> -->
+            </div> -->
+        </div>
         <h2 id="producth2">Add a product, description/additional info, and its quantity below</h2>
         <% if (user.local.email) { %>
-          <div>
+          <div class="input-div">
           <form action="/messages" method="POST">
             <input class="forminput1" type="text" placeholder="Type Item Name" name="product">
             <input type="text" class="forminput3" placeholder="item addtl. info/description" name="description">
-            <input class="forminput2" type="number" name="quantity" id="quantity" placeholder="quantity" min="0" step="1">
+            <input class="forminput2" type="number" name="quantity" placeholder="quantity" min="0" step="1">
+            <input class="forminput4" type="number"  name="threshold" placeholder="alert threshold #">
+            <!-- <input class="forminput4" type="number"  name="rate" placeholder="Sell rate alert"> -->
             <button id="submitButton" type="submit">Submit</button>
           </form>
         </div>
@@ -54,9 +57,13 @@
           <ul class="listOne">
           <% for(var i=0; i<messages.length; i++) {%>
             <li class="message" data-id="<%= messages[i]._id %>">
-              <span><%= messages[i].product %></span>
-              <span><%= messages[i].description %></span> Quantity:
-              <input id="quantity" type="number" min="0" step="1" value="<%= Number(messages[i].quantity) %>"></input>
+              <img src="https://barcode.orcascan.com/?type=code128&data=<%= messages[i].product %>" alt="qr" class="qr">
+              <span class="product"><%= messages[i].product %></span>
+              <span class="description"><%= messages[i].description %></span>  Quantity:
+              <input id="quantity" type="number" min="0" step="1" value="<%= parseInt(messages[i].quantity) %>"></input>
+              Alert threshold:
+              <input id="threshold" type="number" min="1" step="1" value="<%= parseInt(messages[i].threshold) %>"></input>
+              <!-- <input id="rate" type="number" min="1" step="1" value="<%= Number(messages[i].rate) %>"></input> -->
               
               
               <button class="deleteButton">Delete</button>
@@ -72,7 +79,7 @@
 
           
 
-</div>
+
 
 <script src="main.js"></script>
 
