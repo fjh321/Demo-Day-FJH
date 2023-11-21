@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-## Installation
 
-=======
 # Demo-Day-FJH
 <img width="669" alt="image" src="https://github.com/fjh321/Demo-Day-FJH/assets/64885403/106d7e0d-efac-43c2-a5e0-a7f2cb9e8fcb">
 
@@ -22,7 +19,7 @@ Lessons Learned :
 * Developed a more profound understanding of CRUD applciations and database NoSQL databse implementation with MongoDB.
 
 ## Installation
->>>>>>> f18c2ea08e1ca0c8ee30d0ba51530a683a6f0590
+
 1. Clone repo
 2. run `npm install`
 
